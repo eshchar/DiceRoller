@@ -1,2 +1,6 @@
 # DiceRoller
 Calculation probability of custom dice rolls and custom selecting function for rolling multiple dice
+
+Dices type format ara:
+general d1, d2, d3...
+custom [1,2,3,4,5,6], [0,4,6,2,11], [1,2]...
