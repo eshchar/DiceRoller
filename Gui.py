@@ -331,10 +331,10 @@ class MyApp(tk.Frame):
         NumDice = Entry(DiceFrame, width=5, name="num_dice")
         NumDice.grid(column=1, row=0)
 
-        # Add First Dice
+        # Add First Dice with no option to delete 
         if self.FirstDiceFlage:
             self.FirstDiceFlage = 0
-            #Test valiue
+            # Default dice
             Dice.insert(0, "d6")
             NumDice.insert(0, "1")
         else:
@@ -346,12 +346,6 @@ class MyApp(tk.Frame):
 
         # Update the Scrollbar
         canvas.configure(scrollregion=canvas.bbox("all"))
-
-    def callback(self, P):
-        if str.isdigit(P) or P == "":
-            return True
-        else:
-            return False
 
     def main(self):
         self.__BuildGraphSide()
