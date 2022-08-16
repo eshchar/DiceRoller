@@ -1,15 +1,13 @@
-import tkinter as tk
 from tkinter import *
-from tkinter import ttk
 from matplotlib.backends.backend_tkagg import (FigureCanvasTkAgg, NavigationToolbar2Tk)
 import matplotlib.pyplot as plt
 import os
 from Roller import *
 import re
 
-class MyApp(tk.Frame):
+class MyApp(Frame):
     def __init__(self, master=None):
-        tk.Frame.__init__(self, master)
+        Frame.__init__(self, master)
         self.config(width=1430, height=800)
         self.master.title("Dice Probability calculator")
         self.FirstDiceFlage = 1
@@ -146,7 +144,7 @@ class MyApp(tk.Frame):
         #self.grid_columnconfigure(1, weight=7)
 
         # Add Scroll bar
-        my_Scrollbar = ttk.Scrollbar(canvas, orient=VERTICAL, command=canvas.yview )
+        my_Scrollbar = Scrollbar(canvas, orient=VERTICAL, command=canvas.yview )
         my_Scrollbar.pack(side = RIGHT, fill = Y)
 
         # Binde Scrollbar function to Canvas
@@ -282,7 +280,7 @@ class MyApp(tk.Frame):
         DicesCanvas.grid()
 
         # Add Scrollbar
-        my_Scrollbar = ttk.Scrollbar(DicesFrame, orient=VERTICAL, command=DicesCanvas.yview)
+        my_Scrollbar = Scrollbar(DicesFrame, orient=VERTICAL, command=DicesCanvas.yview)
         my_Scrollbar.grid(row=0, sticky="nse")
 
         # Binde Scrollbar function to Canvas
