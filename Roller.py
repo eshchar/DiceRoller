@@ -1,7 +1,4 @@
-class Roller():
-    def __init__(self):
-        pass
-
+class Roller:
     ######################################################################
     # Function: __ListProduct
     #
