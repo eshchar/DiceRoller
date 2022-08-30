@@ -10,6 +10,7 @@ class MyApp(Frame):
         Frame.__init__(self, master)
         self.config(width=1430, height=800)
         self.master.title("Dice Probability calculator")
+        self.master.resizable(False,False)
         self.FirstDiceFlage = 1
         Dirname = os.path.dirname(__file__)
         self.CloseIcon = PhotoImage(file = os.path.join(Dirname, 'Close.png'))
@@ -108,7 +109,6 @@ class MyApp(Frame):
     def __ClearFrames(self, frames):
         for frame in frames:
             self.__ClearFrame(frame)
-        self 
 
     ######################################################################
     # Function: __DeleteFrame
@@ -292,18 +292,14 @@ class MyApp(Frame):
         DicesCanvas.create_window((0, 0), window=InnerDicesFrame, anchor="nw")
 
         # Add Hedars to Inner Dices Frame
-        self.entry = Entry(InnerDicesFrame, width=27, bg='LightSteelBlue',fg='Black', font=('Arial', 10, 'bold'))
-        self.entry.grid(row=0,column=0)
-        self.entry.insert(END, "Dice type")
-        self.entry = Entry(InnerDicesFrame, width=15, bg='LightSteelBlue',fg='Black', font=('Arial', 10, 'bold'))
-        self.entry.grid(row=0,column=1)
-        self.entry.insert(END, "Number of dices")
-
-        ## Add lables to Inner Dices Frame
-        #lable1 = Label(InnerDicesFrame, text="Dice type")
-        #lable1.grid(column=0, row=0, sticky="n")
-        #lable2 = Label(InnerDicesFrame, text="Number of dices")
-        #lable2.grid(column=1, row=0)
+        Mystr1 = StringVar()
+        Mystr1.set('Dice type')
+        self.entry = Entry(InnerDicesFrame, width=27, textvariable=Mystr1, font=('Arial', 10, 'bold'), state=DISABLED)
+        self.entry.grid(row=0, column=0)
+        Mystr2 = StringVar()
+        Mystr2.set('Number of dices')
+        self.entry = Entry(InnerDicesFrame, width=15, textvariable=Mystr2, font=('Arial', 10, 'bold'), state=DISABLED)
+        self.entry.grid(row=0, column=1)
 
         self.__AddDice(DicesCanvas)
 
